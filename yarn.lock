@@ -478,6 +478,11 @@
   resolved "https://registry.npmmirror.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
+"@types/node@^17.0.17":
+  version "17.0.17"
+  resolved "https://registry.npmmirror.com/@types/node/-/node-17.0.17.tgz#a8ddf6e0c2341718d74ee3dc413a13a042c45a0c"
+  integrity sha512-e8PUNQy1HgJGV3iU/Bp2+D/DXh3PYeyli8LgIwsQcs1Ar1LoaWHSIT6Rw+H2rNJmiq6SNWiDytfx8+gYj7wDHw==
+
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
   resolved "https://registry.npmmirror.com/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
@@ -676,6 +681,11 @@
   dependencies:
     "@vue/compiler-dom" "3.2.30"
     "@vue/shared" "3.2.30"
+
+"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.18":
+  version "6.0.9"
+  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.0.9.tgz#d2a82ece1ed2e66970c0611e47ca8af9875a3cc2"
+  integrity sha512-O9tAMBMNMAMzgvbSS3OZlTpfgKCGjvjo5LTjWNtQ/M6A/SKWghJfvoMKuQL/vykLb6rjB/AkaQVFg9yDHprN6w==
 
 "@vue/reactivity-transform@3.2.30":
   version "3.2.30"
@@ -4355,6 +4365,13 @@ vue-eslint-parser@^8.0.1:
     lodash "^4.17.21"
     semver "^7.3.5"
 
+vue-router@4:
+  version "4.0.12"
+  resolved "https://registry.npmmirror.com/vue-router/-/vue-router-4.0.12.tgz#8dc792cddf5bb1abcc3908f9064136de7e13c460"
+  integrity sha512-CPXvfqe+mZLB1kBWssssTiWg4EQERyqJZes7USiqfW9B5N2x+nHlnsM1D3b5CaJ6qgCvMmYJnz+G0iWjNCvXrg==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.18"
+
 vue-tsc@^0.29.8:
   version "0.29.8"
   resolved "https://registry.npmmirror.com/vue-tsc/-/vue-tsc-0.29.8.tgz#f4d8de5dd8756107c878489ccf9178d2d72fff47"
@@ -4373,6 +4390,13 @@ vue@^3.2.25:
     "@vue/runtime-dom" "3.2.30"
     "@vue/server-renderer" "3.2.30"
     "@vue/shared" "3.2.30"
+
+vuex@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.npmmirror.com/vuex/-/vuex-4.0.2.tgz#f896dbd5bf2a0e963f00c67e9b610de749ccacc9"
+  integrity sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.11"
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"
