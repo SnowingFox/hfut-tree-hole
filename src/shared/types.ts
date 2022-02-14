@@ -3,3 +3,13 @@ export interface IResponse<T = any> {
   msg: string
   data: T
 }
+
+export interface IVerifyTokenHeaders {
+  userAgent: string
+  host: string
+  signTime: number
+  studentId: string
+  password: string
+  iat: number
+  exp: number
+}

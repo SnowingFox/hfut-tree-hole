@@ -1,5 +1,4 @@
 import type { TypeOrmModuleOptions } from '@nestjs/typeorm'
-import { User } from '../module/user/entities/user.entity'
 
 const databaseConfig: TypeOrmModuleOptions = {
   type: 'mysql',
@@ -10,6 +9,10 @@ const databaseConfig: TypeOrmModuleOptions = {
   database: 'hfut',
   autoLoadEntities: true,
   synchronize: true,
+}
+
+export const redisConfig = {
+  url: 'redis://treehole:redis@localhost:6379',
 }
 
 export default databaseConfig
