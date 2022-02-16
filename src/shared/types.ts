@@ -5,3 +5,5 @@ export interface MyNavigator extends Navigator {
 }
 
 export type CSSStyle = Partial<CSSStyleDeclaration>
+
+export type InputValidationRule = (value: any) => string | boolean

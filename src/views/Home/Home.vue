@@ -1,11 +1,5 @@
-<script lang='ts' setup>
-import MHeader from '@/components/header/header.vue'
-</script>
+<script lang="ts" setup></script>
 
-<template>
-  <m-header></m-header>
-</template>
+<template></template>
 
-<style lang='scss' scoped>
-
-</style>
+<style lang="scss" scoped></style>

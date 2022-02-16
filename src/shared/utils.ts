@@ -1,3 +1,4 @@
+import type { SetupContext } from 'vue'
 import type { MyNavigator } from '@/shared/types'
 
 export const enum Device {
@@ -13,3 +14,5 @@ export const getCurrentDevice = (): Device => {
 
   return Device.phone
 }
+
+export const isExistAttr = <T extends SetupContext['attrs']>(attrs: T, attrName: string) => typeof attrs[attrName] !== 'undefined'
