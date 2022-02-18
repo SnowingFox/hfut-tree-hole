@@ -2,7 +2,6 @@ import { Controller, Get, Query, Request } from '@nestjs/common'
 import { ApiTags } from '@nestjs/swagger'
 import { LoginQueryDto } from './dto/login-query.dto'
 import { AuthService } from './auth.service'
-import { JwtAuthGuard } from './jwt-auth.guard'
 
 @ApiTags('auth')
 @Controller('auth')

@@ -1,6 +1,6 @@
 import type { ArgumentsHost, ExceptionFilter } from '@nestjs/common'
 import { Catch, HttpException } from '@nestjs/common'
-import { STATUS_CODE } from '../../config/status.config'
+import { COMMON_RESPONSE_CODE } from '../enums/response-code.enum'
 
 @Catch(HttpException)
 export class HttpExceptionFilter<T extends HttpException> implements ExceptionFilter {
@@ -14,7 +14,7 @@ export class HttpExceptionFilter<T extends HttpException> implements ExceptionFi
     const error = typeof response === 'string' ? { msg: exceptionResponse } : (exceptionResponse as Object)
 
     response.status(status).json({
-      code: STATUS_CODE.error,
+      code: COMMON_RESPONSE_CODE.error,
       ...error,
     })
   }

@@ -1,7 +1,6 @@
-import { Inject, Injectable } from '@nestjs/common'
+import { Injectable } from '@nestjs/common'
 import { createClient } from 'redis'
 import { RedisClientType } from '@node-redis/client/dist/lib/client'
-import { REDIS_INJECT_KEY } from './redis.constant'
 
 @Injectable()
 export class RedisService {
@@ -17,8 +16,6 @@ export class RedisService {
 
     await client.connect()
 
-    await client.set('key', 'value')
-    const value = await client.get('key')
     this.client = client
   }
 
