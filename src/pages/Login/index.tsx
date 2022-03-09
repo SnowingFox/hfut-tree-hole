@@ -12,7 +12,6 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
-import { Footer } from '@/components/Footer'
 
 const theme = createTheme()
 
@@ -20,7 +19,7 @@ export default function Login() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
-    // eslint-disable-next-line no-console
+
     console.log({
       email: data.get('email'),
       password: data.get('password'),
@@ -92,7 +91,7 @@ export default function Login() {
             </Grid>
           </Box>
         </Box>
-        <Footer />
+
       </Container>
     </ThemeProvider>
   )

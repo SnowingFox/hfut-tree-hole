@@ -1,7 +1,6 @@
-import * as React from 'react'
-import { styled, useTheme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import Box from '@mui/material/Box'
-import Drawer from '@mui/material/Drawer'
+import MuiDrawer from '@mui/material/Drawer'
 import CssBaseline from '@mui/material/CssBaseline'
 import type { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
 import MuiAppBar from '@mui/material/AppBar'
@@ -11,39 +10,44 @@ import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
-import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
 import type { ReactNode } from 'react'
-
-const drawerWidth = 240
-
-const Main = styled('main', { shouldForwardProp: prop => prop !== 'open' })<{
-  open?: boolean
-}>(({ theme, open }) => ({
-  flexGrow: 1,
-  padding: theme.spacing(3),
-  transition: theme.transitions.create('margin', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  marginLeft: `-${drawerWidth}px`,
-  ...(open && {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  }),
-}))
+import * as React from 'react'
+import { RESPONSE_DESIGN } from '@/shared/constant'
+import { Footer } from '@/components/Footer'
+import { useDrawer } from '@/components/AppLayout/use-drawer'
+import { useWindowSize } from '@/hooks/use-window-size'
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean
 }
+
+const drawerWidth = 240
+
+const Drawer = styled(MuiDrawer)(({ theme }) => (
+  {
+    [theme.breakpoints.down('sm')]: {
+      'width': '70%',
+      'flexShrink': 0,
+      '& .MuiDrawer-paper': {
+        width: '70%',
+        boxSizing: 'border-box',
+      },
+    },
+    [theme.breakpoints.up('sm')]: {
+      'width': drawerWidth,
+      'flexShrink': 0,
+      '& .MuiDrawer-paper': {
+        width: drawerWidth,
+        boxSizing: 'border-box',
+      },
+    },
+  }
+))
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: prop => prop !== 'open',
@@ -53,8 +57,14 @@ const AppBar = styled(MuiAppBar, {
     duration: theme.transitions.duration.leavingScreen,
   }),
   ...(open && {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: `${drawerWidth}px`,
+    [theme.breakpoints.up('sm')]: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: `${drawerWidth}px`,
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      marginLeft: 0,
+    },
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
@@ -62,65 +72,36 @@ const AppBar = styled(MuiAppBar, {
   }),
 }))
 
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
-}))
-
-export function Appbar(props: { children: ReactNode }) {
-  const theme = useTheme()
-  const [open, setOpen] = React.useState(false)
-
-  const handleDrawerOpen = () => {
-    setOpen(true)
-  }
-
-  const handleDrawerClose = () => {
-    setOpen(false)
-  }
-
+export function AppLayout(props: { children: ReactNode }) {
+  const { open, variant, handleDrawerClose, handleDrawerOpen } = useDrawer()
+  const { isSm } = useWindowSize()
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box className={'relative w-screen h-screen'}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} className={'p-1 sm:p-0'}>
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-          >
-            <MenuIcon />
-          </IconButton>
+          {isSm <= RESPONSE_DESIGN.sm
+            ? <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{ mr: 2, ...(open && { display: 'none' }) }}
+            >
+              <MenuIcon />
+            </IconButton>
+            : ''}
           <Typography variant="h6" noWrap component="div">
             HFUT树洞
           </Typography>
         </Toolbar>
       </AppBar>
       <Drawer
-        sx={{
-          'width': drawerWidth,
-          'flexShrink': 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
-        }}
-        variant="persistent"
+        variant={variant}
         anchor="left"
         open={open}
+        onClose={handleDrawerClose}
       >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
@@ -143,10 +124,11 @@ export function Appbar(props: { children: ReactNode }) {
           ))}
         </List>
       </Drawer>
-      <Main open={open}>
-        <DrawerHeader />
-        <div children={props.children} />
-      </Main>
+      <div
+        className={'flex justify-center'}
+        children={props.children}
+      />
+      <Footer />
     </Box>
   )
 }

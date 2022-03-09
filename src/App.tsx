@@ -1,13 +1,13 @@
 import { RootRoutes } from '@/route'
-import { Appbar } from '@/components/Appbar'
 import './App.css'
+import { AppLayout } from '@/components/AppLayout'
 
 function App() {
   return (
     <>
-      <Appbar>
+      <AppLayout>
         <RootRoutes />
-      </Appbar>
+      </AppLayout>
     </>
   )
 }
