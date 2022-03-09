@@ -17,10 +17,11 @@ import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
 import type { ReactNode } from 'react'
 import * as React from 'react'
-import { RESPONSE_DESIGN } from '@/shared/constant'
 import { Footer } from '@/components/Footer'
 import { useDrawer } from '@/components/AppLayout/use-drawer'
 import { useWindowSize } from '@/hooks/use-window-size'
+import { DrawerHeader } from '@/components/AppLayout/DrawerHeader'
+import { DrawerList } from '@/components/AppLayout/DrawerList'
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean
@@ -75,12 +76,13 @@ const AppBar = styled(MuiAppBar, {
 export function AppLayout(props: { children: ReactNode }) {
   const { open, variant, handleDrawerClose, handleDrawerOpen } = useDrawer()
   const { isSm } = useWindowSize()
+
   return (
     <Box className={'relative w-screen h-screen'}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} className={'p-1 sm:p-0'}>
+      <AppBar position="fixed" open={open} className={'p-1 sm:p-0'} style={{ boxShadow: 'none', backgroundColor: 'rgba(255,255,255,.3)' }}>
         <Toolbar>
-          {isSm <= RESPONSE_DESIGN.sm
+          {isSm
             ? <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -102,16 +104,8 @@ export function AppLayout(props: { children: ReactNode }) {
         open={open}
         onClose={handleDrawerClose}
       >
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        <DrawerHeader />
+        <DrawerList />
         <Divider />
         <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
