@@ -12,7 +12,7 @@ export function DrawerList() {
       icon: <HomeIcon />,
     },
     {
-      path: '/',
+      path: '/topic',
       txt: '话题',
       icon: <AssignmentIcon />,
     },
