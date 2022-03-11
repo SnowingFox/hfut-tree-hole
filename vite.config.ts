@@ -15,6 +15,7 @@ export default defineConfig({
     alias: {
       '@': resolve('src/'),
       '@scss': resolve('src/assets/scss'),
+      '@public': resolve('public/'),
     },
   },
   css: {

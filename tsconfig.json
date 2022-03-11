@@ -18,7 +18,8 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
-      "@scss/*": ["src/assets/scss/*"]
+      "@scss/*": ["src/assets/scss/*"],
+      "@public/*": ["public/*"]
     }
   },
   "include": ["src"],
