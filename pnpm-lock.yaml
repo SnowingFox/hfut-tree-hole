@@ -3,7 +3,6 @@ lockfileVersion: 5.3
 specifiers:
   '@antfu/eslint-config': ^0.17.0
   '@antfu/ni': ^0.13.2
-  '@apollo/client': ^3.5.10
   '@emotion/react': ^11.8.1
   '@emotion/styled': ^11.8.1
   '@mui/icons-material': ^5.4.4
@@ -21,7 +20,6 @@ specifiers:
   eslint: ^8.10.0
   eslint-plugin-promise: ^6.0.0
   eslint-plugin-react-hooks: ^4.3.0
-  graphql: ^16.3.0
   lodash: ^4.17.21
   mobx-react: ^7.3.0
   mockjs: ^1.1.0
@@ -40,13 +38,11 @@ specifiers:
   vitest: ^0.6.0
 
 dependencies:
-  '@apollo/client': registry.npmmirror.com/@apollo/client/3.5.10_graphql@16.3.0+react@17.0.2
   '@emotion/react': registry.npmmirror.com/@emotion/react/11.8.1_00d6772dea80510e818fd171caaa025a
   '@emotion/styled': registry.npmmirror.com/@emotion/styled/11.8.1_35774467555e9088dcc222da78297fe2
   '@mui/icons-material': registry.npmmirror.com/@mui/icons-material/5.5.0_e26da9a06063015d999cdabd2929947d
   '@mui/material': registry.npmmirror.com/@mui/material/5.5.0_cc046292e2a161659fc089df7011b5cc
   axios: registry.npmmirror.com/axios/0.26.1
-  graphql: registry.npmmirror.com/graphql/16.3.0
   lodash: registry.npmmirror.com/lodash/4.17.21
   mobx-react: registry.npmmirror.com/mobx-react/7.3.0_react-dom@17.0.2+react@17.0.2
   mockjs: registry.npmmirror.com/mockjs/1.1.0
@@ -201,40 +197,6 @@ packages:
     version: 0.13.2
     hasBin: true
     dev: true
-
-  registry.npmmirror.com/@apollo/client/3.5.10_graphql@16.3.0+react@17.0.2:
-    resolution: {integrity: sha512-tL3iSpFe9Oldq7gYikZK1dcYxp1c01nlSwtsMz75382HcI6fvQXyFXUCJTTK3wgO2/ckaBvRGw7VqjFREdVoRw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@apollo/client/-/client-3.5.10.tgz}
-    id: registry.npmmirror.com/@apollo/client/3.5.10
-    name: '@apollo/client'
-    version: 3.5.10
-    peerDependencies:
-      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
-      graphql-ws: ^5.5.5
-      react: ^16.8.0 || ^17.0.0
-      subscriptions-transport-ws: ^0.9.0 || ^0.11.0
-    peerDependenciesMeta:
-      graphql-ws:
-        optional: true
-      react:
-        optional: true
-      subscriptions-transport-ws:
-        optional: true
-    dependencies:
-      '@graphql-typed-document-node/core': registry.npmmirror.com/@graphql-typed-document-node/core/3.1.1_graphql@16.3.0
-      '@wry/context': registry.npmmirror.com/@wry/context/0.6.1
-      '@wry/equality': registry.npmmirror.com/@wry/equality/0.5.2
-      '@wry/trie': registry.npmmirror.com/@wry/trie/0.3.1
-      graphql: registry.npmmirror.com/graphql/16.3.0
-      graphql-tag: registry.npmmirror.com/graphql-tag/2.12.6_graphql@16.3.0
-      hoist-non-react-statics: registry.npmmirror.com/hoist-non-react-statics/3.3.2
-      optimism: registry.npmmirror.com/optimism/0.16.1
-      prop-types: registry.npmmirror.com/prop-types/15.8.1
-      react: registry.npmmirror.com/react/17.0.2
-      symbol-observable: registry.npmmirror.com/symbol-observable/4.0.0
-      ts-invariant: registry.npmmirror.com/ts-invariant/0.9.4
-      tslib: registry.npmmirror.com/tslib/2.3.1
-      zen-observable-ts: registry.npmmirror.com/zen-observable-ts/1.2.3
-    dev: false
 
   registry.npmmirror.com/@babel/code-frame/7.16.7:
     resolution: {integrity: sha512-iAXqUn8IIeBTNd72xsFlgaXHkMBMt6y4HJp1tIaK465CWLT/fG1aqB7ykr95gHHmlBdGbFeWWfyB4NJJ0nmeIg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@babel/code-frame/-/code-frame-7.16.7.tgz}
@@ -820,17 +782,6 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@graphql-typed-document-node/core/3.1.1_graphql@16.3.0:
-    resolution: {integrity: sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz}
-    id: registry.npmmirror.com/@graphql-typed-document-node/core/3.1.1
-    name: '@graphql-typed-document-node/core'
-    version: 3.1.1
-    peerDependencies:
-      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      graphql: registry.npmmirror.com/graphql/16.3.0
-    dev: false
-
   registry.npmmirror.com/@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@humanwhocodes/config-array/-/config-array-0.9.5.tgz}
     name: '@humanwhocodes/config-array'
@@ -1405,33 +1356,6 @@ packages:
       lodash: registry.npmmirror.com/lodash/4.17.21
       react: registry.npmmirror.com/react/17.0.2
     dev: true
-
-  registry.npmmirror.com/@wry/context/0.6.1:
-    resolution: {integrity: sha512-LOmVnY1iTU2D8tv4Xf6MVMZZ+juIJ87Kt/plMijjN20NMAXGmH4u8bS1t0uT74cZ5gwpocYueV58YwyI8y+GKw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@wry/context/-/context-0.6.1.tgz}
-    name: '@wry/context'
-    version: 0.6.1
-    engines: {node: '>=8'}
-    dependencies:
-      tslib: registry.npmmirror.com/tslib/2.3.1
-    dev: false
-
-  registry.npmmirror.com/@wry/equality/0.5.2:
-    resolution: {integrity: sha512-oVMxbUXL48EV/C0/M7gLVsoK6qRHPS85x8zECofEZOVvxGmIPLA9o5Z27cc2PoAyZz1S2VoM2A7FLAnpfGlneA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@wry/equality/-/equality-0.5.2.tgz}
-    name: '@wry/equality'
-    version: 0.5.2
-    engines: {node: '>=8'}
-    dependencies:
-      tslib: registry.npmmirror.com/tslib/2.3.1
-    dev: false
-
-  registry.npmmirror.com/@wry/trie/0.3.1:
-    resolution: {integrity: sha512-WwB53ikYudh9pIorgxrkHKrQZcCqNM/Q/bDzZBffEaGUKGuHrRb3zZUT9Sh2qw9yogC7SsdRmQ1ER0pqvd3bfw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@wry/trie/-/trie-0.3.1.tgz}
-    name: '@wry/trie'
-    version: 0.3.1
-    engines: {node: '>=8'}
-    dependencies:
-      tslib: registry.npmmirror.com/tslib/2.3.1
-    dev: false
 
   registry.npmmirror.com/acorn-jsx/5.3.2_acorn@8.7.0:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz}
@@ -3351,26 +3275,6 @@ packages:
     version: 4.2.9
     dev: true
 
-  registry.npmmirror.com/graphql-tag/2.12.6_graphql@16.3.0:
-    resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/graphql-tag/-/graphql-tag-2.12.6.tgz}
-    id: registry.npmmirror.com/graphql-tag/2.12.6
-    name: graphql-tag
-    version: 2.12.6
-    engines: {node: '>=10'}
-    peerDependencies:
-      graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      graphql: registry.npmmirror.com/graphql/16.3.0
-      tslib: registry.npmmirror.com/tslib/2.3.1
-    dev: false
-
-  registry.npmmirror.com/graphql/16.3.0:
-    resolution: {integrity: sha512-xm+ANmA16BzCT5pLjuXySbQVFwH3oJctUVdy81w1sV0vBU0KgDdBGtxQOUd5zqOBk/JayAFeG8Dlmeq74rjm/A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/graphql/-/graphql-16.3.0.tgz}
-    name: graphql
-    version: 16.3.0
-    engines: {node: ^12.22.0 || ^14.16.0 || >=16.0.0}
-    dev: false
-
   registry.npmmirror.com/has-bigints/1.0.1:
     resolution: {integrity: sha512-LSBS2LjbNBTf6287JEbEzvJgftkF5qFkmCo9hDRpAzKhUOlJ+hx8dd4USs00SgsUNwc4617J9ki5YtEClM2ffA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/has-bigints/-/has-bigints-1.0.1.tgz}
     name: has-bigints
@@ -4208,15 +4112,6 @@ packages:
     dependencies:
       mimic-fn: registry.npmmirror.com/mimic-fn/1.2.0
     dev: true
-
-  registry.npmmirror.com/optimism/0.16.1:
-    resolution: {integrity: sha512-64i+Uw3otrndfq5kaoGNoY7pvOhSsjFEN4bdEFh80MWVk/dbgJfMv7VFDeCT8LxNAlEVhQmdVEbfE7X2nWNIIg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/optimism/-/optimism-0.16.1.tgz}
-    name: optimism
-    version: 0.16.1
-    dependencies:
-      '@wry/context': registry.npmmirror.com/@wry/context/0.6.1
-      '@wry/trie': registry.npmmirror.com/@wry/trie/0.3.1
-    dev: false
 
   registry.npmmirror.com/optionator/0.9.1:
     resolution: {integrity: sha512-74RlY5FCnhq4jRxVUPKDaRwrVNXMqsGsiW6AJw4XK8hmtm10wC0ypZBLw5IIp85NZMr91+qd1RvvENwg7jjRFw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/optionator/-/optionator-0.9.1.tgz}
@@ -5108,13 +5003,6 @@ packages:
     version: 1.0.0
     engines: {node: '>= 0.4'}
 
-  registry.npmmirror.com/symbol-observable/4.0.0:
-    resolution: {integrity: sha512-b19dMThMV4HVFynSAM1++gBHAbk2Tc/osgLIBZMKsyqh34jb2e8Os7T6ZW/Bt3pJFdBTd2JwAnAAEQV7rSNvcQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/symbol-observable/-/symbol-observable-4.0.0.tgz}
-    name: symbol-observable
-    version: 4.0.0
-    engines: {node: '>=0.10'}
-    dev: false
-
   registry.npmmirror.com/tailwindcss/3.0.23_autoprefixer@10.4.2:
     resolution: {integrity: sha512-+OZOV9ubyQ6oI2BXEhzw4HrqvgcARY38xv3zKcjnWtMIZstEsXdI9xftd1iB7+RbOnj2HOEzkA0OyB5BaSxPQA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tailwindcss/-/tailwindcss-3.0.23.tgz}
     id: registry.npmmirror.com/tailwindcss/3.0.23
@@ -5200,15 +5088,6 @@ packages:
     dependencies:
       is-number: registry.npmmirror.com/is-number/7.0.0
     dev: true
-
-  registry.npmmirror.com/ts-invariant/0.9.4:
-    resolution: {integrity: sha512-63jtX/ZSwnUNi/WhXjnK8kz4cHHpYS60AnmA6ixz17l7E12a5puCWFlNpkne5Rl0J8TBPVHpGjsj4fxs8ObVLQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ts-invariant/-/ts-invariant-0.9.4.tgz}
-    name: ts-invariant
-    version: 0.9.4
-    engines: {node: '>=8'}
-    dependencies:
-      tslib: registry.npmmirror.com/tslib/2.3.1
-    dev: false
 
   registry.npmmirror.com/ts-node/10.7.0_e79e62fe450383fd2d418267dc75e645:
     resolution: {integrity: sha512-TbIGS4xgJoX2i3do417KSaep1uRAW/Lu+WAL2doDHC0D6ummjirVOXU5/7aiZotbQ5p1Zp9tP7U6cYhA0O7M8A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ts-node/-/ts-node-10.7.0.tgz}
@@ -5545,17 +5424,3 @@ packages:
     engines: {node: '>=6'}
     dev: true
     optional: true
-
-  registry.npmmirror.com/zen-observable-ts/1.2.3:
-    resolution: {integrity: sha512-hc/TGiPkAWpByykMwDcem3SdUgA4We+0Qb36bItSuJC9xD0XVBZoFHYoadAomDSNf64CG8Ydj0Qb8Od8BUWz5g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/zen-observable-ts/-/zen-observable-ts-1.2.3.tgz}
-    name: zen-observable-ts
-    version: 1.2.3
-    dependencies:
-      zen-observable: registry.npmmirror.com/zen-observable/0.8.15
-    dev: false
-
-  registry.npmmirror.com/zen-observable/0.8.15:
-    resolution: {integrity: sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/zen-observable/-/zen-observable-0.8.15.tgz}
-    name: zen-observable
-    version: 0.8.15
-    dev: false

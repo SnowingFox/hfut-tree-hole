@@ -36,9 +36,7 @@ const Drawer = styled(MuiDrawer)(({ theme }) => (
 
 export function AppLayout(props: { children: ReactNode }) {
   const { open, variant, handleDrawerClose, handleDrawerOpen } = useDrawer()
-  useEffect(() => {
-    getRecommendMusic().then(res => console.log(res))
-  }, [])
+
   return (
     <>
       <Box className={'relative w-screen h-screen'}>
