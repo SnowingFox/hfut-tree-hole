@@ -2,11 +2,14 @@ import { styled } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import MuiDrawer from '@mui/material/Drawer'
 import type { ReactNode } from 'react'
+import { Observable } from 'rxjs'
+import { useEffect } from 'react'
 import { Footer } from '@/components/Footer'
 import { useDrawer } from '@/layouts/AppLayout/use-drawer'
 import { DrawerHeader } from '@/layouts/AppLayout/DrawerHeader'
 import { DrawerList } from '@/layouts/AppLayout/DrawerList'
 import { AppHeader } from '@/layouts/AppLayout/Header/Header'
+import { getRecommendMusic } from '@/service/test'
 
 export const drawerWidth = 300
 
@@ -33,6 +36,9 @@ const Drawer = styled(MuiDrawer)(({ theme }) => (
 
 export function AppLayout(props: { children: ReactNode }) {
   const { open, variant, handleDrawerClose, handleDrawerOpen } = useDrawer()
+  useEffect(() => {
+    getRecommendMusic().then(res => console.log(res))
+  }, [])
   return (
     <>
       <Box className={'relative w-screen h-screen'}>

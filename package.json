@@ -14,7 +14,9 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.4.4",
     "@mui/material": "^5.4.4",
+    "axios": "^0.26.1",
     "graphql": "^16.3.0",
+    "lodash": "^4.17.21",
     "mobx-react": "^7.3.0",
     "mockjs": "^1.1.0",
     "react": "^17.0.2",
@@ -26,6 +28,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.17.0",
     "@antfu/ni": "^0.13.2",
+    "@types/lodash": "^4.14.179",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^5.13.0",

@@ -8,6 +8,7 @@ specifiers:
   '@emotion/styled': ^11.8.1
   '@mui/icons-material': ^5.4.4
   '@mui/material': ^5.4.4
+  '@types/lodash': ^4.14.179
   '@types/react': ^17.0.33
   '@types/react-dom': ^17.0.10
   '@typescript-eslint/eslint-plugin': ^5.13.0
@@ -15,11 +16,13 @@ specifiers:
   '@vitejs/plugin-react': ^1.0.7
   '@welldone-software/why-did-you-render': ^6.2.3
   autoprefixer: ^10.4.2
+  axios: ^0.26.1
   cz-conventional-changelog: ^3.3.0
   eslint: ^8.10.0
   eslint-plugin-promise: ^6.0.0
   eslint-plugin-react-hooks: ^4.3.0
   graphql: ^16.3.0
+  lodash: ^4.17.21
   mobx-react: ^7.3.0
   mockjs: ^1.1.0
   postcss: ^8.4.8
@@ -42,7 +45,9 @@ dependencies:
   '@emotion/styled': registry.npmmirror.com/@emotion/styled/11.8.1_35774467555e9088dcc222da78297fe2
   '@mui/icons-material': registry.npmmirror.com/@mui/icons-material/5.5.0_e26da9a06063015d999cdabd2929947d
   '@mui/material': registry.npmmirror.com/@mui/material/5.5.0_cc046292e2a161659fc089df7011b5cc
+  axios: registry.npmmirror.com/axios/0.26.1
   graphql: registry.npmmirror.com/graphql/16.3.0
+  lodash: registry.npmmirror.com/lodash/4.17.21
   mobx-react: registry.npmmirror.com/mobx-react/7.3.0_react-dom@17.0.2+react@17.0.2
   mockjs: registry.npmmirror.com/mockjs/1.1.0
   react: registry.npmmirror.com/react/17.0.2
@@ -54,6 +59,7 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config': registry.npmmirror.com/@antfu/eslint-config/0.17.0_eslint@8.10.0+typescript@4.6.2
   '@antfu/ni': registry.npmmirror.com/@antfu/ni/0.13.2
+  '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.179
   '@types/react': registry.npmmirror.com/@types/react/17.0.40
   '@types/react-dom': registry.npmmirror.com/@types/react-dom/17.0.13
   '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.14.0_f4054b8c3cd621db16ae1b9d571bccc0
@@ -1156,6 +1162,12 @@ packages:
     version: 0.0.29
     dev: true
 
+  registry.npmmirror.com/@types/lodash/4.14.179:
+    resolution: {integrity: sha512-uwc1x90yCKqGcIOAT6DwOSuxnrAbpkdPsUOZtwrXb4D/6wZs+6qG7QnIawDuZWg0sWpxl+ltIKCaLoMlna678w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.179.tgz}
+    name: '@types/lodash'
+    version: 4.14.179
+    dev: true
+
   registry.npmmirror.com/@types/node/17.0.21:
     resolution: {integrity: sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-17.0.21.tgz}
     name: '@types/node'
@@ -1624,6 +1636,16 @@ packages:
       postcss: registry.npmmirror.com/postcss/8.4.8
       postcss-value-parser: registry.npmmirror.com/postcss-value-parser/4.2.0
     dev: true
+
+  registry.npmmirror.com/axios/0.26.1:
+    resolution: {integrity: sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/axios/-/axios-0.26.1.tgz}
+    name: axios
+    version: 0.26.1
+    dependencies:
+      follow-redirects: registry.npmmirror.com/follow-redirects/1.14.9
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   registry.npmmirror.com/babel-plugin-macros/2.8.0:
     resolution: {integrity: sha512-SEP5kJpfGYqYKpBrj5XU3ahw5p5GOHJ0U5ssOSQ/WBVdwkD2Dzlce95exQTs3jOVWPPKLBN2rlEWkCK7dSmLvg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/babel-plugin-macros/-/babel-plugin-macros-2.8.0.tgz}
@@ -3117,6 +3139,18 @@ packages:
     version: 3.2.5
     dev: true
 
+  registry.npmmirror.com/follow-redirects/1.14.9:
+    resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/follow-redirects/-/follow-redirects-1.14.9.tgz}
+    name: follow-redirects
+    version: 1.14.9
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
+
   registry.npmmirror.com/fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fraction.js/-/fraction.js-4.2.0.tgz}
     name: fraction.js
@@ -3860,7 +3894,6 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz}
     name: lodash
     version: 4.17.21
-    dev: true
 
   registry.npmmirror.com/longest/2.0.1:
     resolution: {integrity: sha512-Ajzxb8CM6WAnFjgiloPsI3bF+WCxcvhdIG3KNA2KN962+tdBsHcuQ4k4qX/EcS/2CRkcc0iAkR956Nib6aXU/Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/longest/-/longest-2.0.1.tgz}
