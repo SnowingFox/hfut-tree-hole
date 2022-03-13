@@ -2,14 +2,12 @@ import { styled } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import MuiDrawer from '@mui/material/Drawer'
 import type { ReactNode } from 'react'
-import { Observable } from 'rxjs'
-import { useEffect } from 'react'
+import { Button } from '@mui/material'
 import { Footer } from '@/components/Footer'
 import { useDrawer } from '@/layouts/AppLayout/use-drawer'
-import { DrawerHeader } from '@/layouts/AppLayout/DrawerHeader'
-import { DrawerList } from '@/layouts/AppLayout/DrawerList'
+import { DrawerHeader } from '@/layouts/AppLayout/Drawer/DrawerHeader'
+import { DrawerList } from '@/layouts/AppLayout/Drawer'
 import { AppHeader } from '@/layouts/AppLayout/Header/Header'
-import { getRecommendMusic } from '@/service/test'
 
 export const drawerWidth = 300
 
@@ -39,6 +37,7 @@ export function AppLayout(props: { children: ReactNode }) {
 
   return (
     <>
+      <Button variant={'contained'}>sss</Button>
       <Box className={'relative w-screen h-screen'}>
         <AppHeader open={open} handleDrawerOpen={handleDrawerOpen} />
         <Drawer
@@ -50,7 +49,7 @@ export function AppLayout(props: { children: ReactNode }) {
           <DrawerHeader />
           <DrawerList />
         </Drawer>
-        <div
+        <Box
           className={'flex justify-center'}
           children={props.children}
         />

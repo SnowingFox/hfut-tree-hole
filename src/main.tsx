@@ -5,16 +5,14 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import '@/plugins/wydr'
 import '@/assets/scss/override.scss'
-import ThemeConfig from '@/theme'
-import GlobalStyles from '@/theme/theme-config/global-style'
+import ThemeProvider from '@/theme'
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ThemeConfig>
-        <GlobalStyles />
+      <ThemeProvider>
         <App />
-      </ThemeConfig>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),

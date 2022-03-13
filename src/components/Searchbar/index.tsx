@@ -1,12 +1,18 @@
 import { useState } from 'react'
-import { alpha, styled } from '@mui/material/styles'
-import { Button, ClickAwayListener, IconButton, Input, InputAdornment, Slide } from '@mui/material'
+// @mui
+import { styled } from '@mui/material/styles'
+import { Button, ClickAwayListener, Input, InputAdornment, Slide } from '@mui/material'
+import IconButton from '@mui/material/IconButton'
 import { SearchIcon } from '@/svg/icon/search'
+import cssStyles from '@/theme/utils/cssStyles'
+
+// ----------------------------------------------------------------------
 
 const APPBAR_MOBILE = 64
 const APPBAR_DESKTOP = 92
 
 const SearchbarStyle = styled('div')(({ theme }) => ({
+  ...cssStyles(theme).bgBlur(),
   top: 0,
   left: 0,
   zIndex: 99,
@@ -15,10 +21,8 @@ const SearchbarStyle = styled('div')(({ theme }) => ({
   position: 'absolute',
   alignItems: 'center',
   height: APPBAR_MOBILE,
-  backdropFilter: 'blur(6px)',
-  WebkitBackdropFilter: 'blur(6px)', // Fix on Mobile
   padding: theme.spacing(0, 3),
-  backgroundColor: `${alpha(theme.palette.background.default, 0.72)}`,
+  boxShadow: theme.customShadows.z8,
   [theme.breakpoints.up('md')]: {
     height: APPBAR_DESKTOP,
     padding: theme.spacing(0, 5),
@@ -31,7 +35,7 @@ export function Searchbar() {
   const [isOpen, setOpen] = useState(false)
 
   const handleOpen = () => {
-    setOpen(true)
+    setOpen(prev => !prev)
   }
 
   const handleClose = () => {
@@ -53,14 +57,13 @@ export function Searchbar() {
               autoFocus
               fullWidth
               disableUnderline
-              placeholder="搜点什么吧"
+              placeholder="Search…"
               startAdornment={
                 <InputAdornment position="start">
                   <SearchIcon />
                 </InputAdornment>
               }
-              sx={{ mr: 0, fontWeight: 'fontWeightBold' }}
-              className={'ml-5'}
+              sx={{ mr: 1, fontWeight: 'fontWeightBold' }}
             />
             <Button variant="contained" onClick={handleClose}>
               Search
